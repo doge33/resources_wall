@@ -69,5 +69,5 @@ app.use("/", resourcesRoutes(database));
 // Note: mount other resources here, using the same pattern above
 
 app.listen(PORT, () => {
-  console.log(`Example app listening on port ${PORT}`);
+  console.log(`Resource Wall listening on port ${PORT}`);
 });

@@ -12,6 +12,7 @@ const morgan = require('morgan');
 const cookieSession = require("cookie-session")
 const connectFlash = require("connect-flash");
 const session = require("express-session");
+const path = require('path');
 
 // PG database client/connection setup
 const { Pool } = require('pg');
@@ -33,14 +34,11 @@ app.use("/styles", sass({
   debug: true,
   outputStyle: 'expanded'
 }));
-app.use(express.static("public"));
-//app.use('/resources', express.static(__dirname+'/public'));
 
-// app.get('/', function(req, res){
-//   console.log('home page')
-//   //res.redirect('/resources')
+app.use(express.static(path.join(__dirname, 'public'), {
+  index: false
+}));
 
-// })
 
 // Cookie Session
 app.use(cookieSession({

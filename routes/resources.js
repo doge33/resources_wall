@@ -7,6 +7,14 @@ const router = express.Router();
 //------------------------------------------------------------------------------
 module.exports = ({ getAllResources, addResource, myResources, getResourceByID, addResourceReview, getQueryResource, getAllReviews, addResourceTopic, getResourceIDReviewID, getLike, myLikedResources }) => {
 
+  //------------------------------------------------------------------------------
+  router.get("/", (req, res) => {
+    //res.send('GET request to the homepage')
+
+    res.redirect("/resources")
+  });
+  //------------------------------------------------------------------------------
+
   router.get("/api/resources/", (req, res) => {
 
     const { search } = req.query;
@@ -87,15 +95,6 @@ module.exports = ({ getAllResources, addResource, myResources, getResourceByID, 
       })
       .catch(e => res.send(e));
   });
-  //------------------------------------------------------------------------------
-  //------------------------------------------------------------------------------
-  // router.get("/", (req, res) => {
-  //   console.log('at home page!')
-
-
-  //   res.redirect("/resources")
-
-  // });
   //------------------------------------------------------------------------------
   router.post("/resources", (req, res) => {
 

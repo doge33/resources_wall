@@ -34,6 +34,13 @@ app.use("/styles", sass({
   outputStyle: 'expanded'
 }));
 app.use(express.static("public"));
+//app.use('/resources', express.static(__dirname+'/public'));
+
+// app.get('/', function(req, res){
+//   console.log('home page')
+//   //res.redirect('/resources')
+
+// })
 
 // Cookie Session
 app.use(cookieSession({

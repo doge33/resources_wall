@@ -88,6 +88,15 @@ module.exports = ({ getAllResources, addResource, myResources, getResourceByID, 
       .catch(e => res.send(e));
   });
   //------------------------------------------------------------------------------
+  //------------------------------------------------------------------------------
+  // router.get("/", (req, res) => {
+  //   console.log('at home page!')
+
+
+  //   res.redirect("/resources")
+
+  // });
+  //------------------------------------------------------------------------------
   router.post("/resources", (req, res) => {
 
     const resource = req.body;

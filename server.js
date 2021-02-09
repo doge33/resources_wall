@@ -35,7 +35,7 @@ app.use("/styles", sass({
   outputStyle: 'expanded'
 }));
 
-app.use(express.static(path.join(__dirname, 'public'), {
+app.use(express.static(path.join(__dirname, '/public'), {
   index: false
 }));
 

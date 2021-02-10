@@ -93,4 +93,3 @@ app.listen(PORT, () => {
   console.log(`Resource Wall listening on port ${PORT}`);
 });
 
-module.exports.bcrypt = bcrypt;

@@ -1,6 +1,6 @@
 // load .env data into process.env
 //require('dotenv').config();
-if (process.env.ENV !== 'production') require('dotenv').config()
+//if (process.env.ENV !== 'production') require('dotenv').config()
 
 // Web server config
 const PORT = process.env.PORT || 8080;
@@ -14,6 +14,9 @@ const cookieSession = require("cookie-session")
 const connectFlash = require("connect-flash");
 const session = require("express-session");
 const path = require('path');
+if (app.get('env') == 'development'){ require('dotenv').config();
+
+
 
 // PG database client/connection setup
 const { Pool } = require('pg');

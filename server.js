@@ -24,7 +24,9 @@ if (app.get('env') === 'development'){ require('dotenv').config()};
 const { Pool } = require('pg');
 const dbParams = require('./lib/db.js');
 const db = new Pool(dbParams);
-db.connect();
+db.connect()
+  .then(() => console.log('Connection to db successful'))
+  .catch(err => console.log(err));
 const database = require("./helpers/database")(db)
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT

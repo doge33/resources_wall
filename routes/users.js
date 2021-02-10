@@ -1,5 +1,5 @@
 //------------------------------------------------------------------------------
-const bcrypt = require('bcrypt')
+const bcrypt = require('../server/js').bcrypt;
 const express = require('express');
 const router = express.Router();
 //------------------------------------------------------------------------------

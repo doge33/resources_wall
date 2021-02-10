@@ -10,6 +10,7 @@ const bodyParser = require("body-parser");
 const sass = require("node-sass-middleware");
 const app = express();
 const morgan = require('morgan');
+const bcrypt = require('bcrypt');
 //const cookieSession = require("cookie-session")
 const session = require("cookie-session")
 const connectFlash = require("connect-flash");
@@ -91,3 +92,5 @@ app.use("/", resourcesRoutes(database));
 app.listen(PORT, () => {
   console.log(`Resource Wall listening on port ${PORT}`);
 });
+
+module.exports.bcrypt = bcrypt;

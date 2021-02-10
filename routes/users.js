@@ -1,5 +1,5 @@
 //------------------------------------------------------------------------------
-const bcrypt = require('bcrypt');
+//const bcrypt = require('bcrypt');
 const express = require('express');
 const router = express.Router();
 //------------------------------------------------------------------------------
@@ -21,8 +21,8 @@ module.exports = ({ addUser,
   router.post("/register", (req, res) => {
 
     const user = req.body;
-    user.password = bcrypt.hashSync(req.body.password, 10)
-
+    //user.password = bcrypt.hashSync(req.body.password, 10)
+    user.password = req.body.password;
     getUserByEmail(req.body.email)
       .then(data => {
         if (!data) {
@@ -66,7 +66,8 @@ module.exports = ({ addUser,
             message: "Please register an account!"
           }
           res.redirect("/register")
-        } else if (user.email === email && bcrypt.compareSync(password, user.password)) {
+        //} else if (user.email === email && bcrypt.compareSync(password, user.password)) {
+        } else if (user.email === email && password === user.password) {
           req.session.user_id = user.id;
           return res.redirect("/resources");
         } else {
@@ -133,7 +134,8 @@ module.exports = ({ addUser,
         });
 
     } if (req.body.password) {
-      updateUserPassword(user, bcrypt.hashSync(req.body.password, 10))
+      //updateUserPassword(user, bcrypt.hashSync(req.body.password, 10))
+      updateUserPassword(user, req.body.password)
         .then(data => {
           console.log('update user password SUCCESS')
           console.log(data);

@@ -10,9 +10,10 @@ const bodyParser = require("body-parser");
 const sass = require("node-sass-middleware");
 const app = express();
 const morgan = require('morgan');
-const cookieSession = require("cookie-session")
+//const cookieSession = require("cookie-session")
+const session = require("cookie-session")
 const connectFlash = require("connect-flash");
-const session = require("express-session");
+//const session = require("express-session");
 const path = require('path');
 if (app.get('env') == 'development'){ require('dotenv').config()};
 
@@ -45,17 +46,27 @@ app.use(express.static(path.join(__dirname, '/public'), {
 
 
 // Cookie Session
-app.use(cookieSession({
-  name: "session",
-  keys: ["key1", "key2"]
-}))
+// app.use(cookieSession({
+//   name: "session",
+//   keys: ["key1", "key2"]
+// }))
 
 // Express Session
+// app.use(session({
+//   secret: "secret",
+//   resave: true,
+//   saveUninitialized: true,
+// }))
+
+//Cookie Session(new)
 app.use(session({
   secret: "secret",
-  resave: true,
+  resave: false,
   saveUninitialized: true,
+  maxAge: 1000 * 60 * 15,
+  cookie: {secure: true}
 }))
+
 
 // Connect Flash
 app.use(connectFlash())

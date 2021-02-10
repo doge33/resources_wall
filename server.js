@@ -22,7 +22,11 @@ if (app.get('env') === 'development'){ require('dotenv').config()};
 // PG database client/connection setup
 const { Pool } = require('pg');
 const dbParams = require('./lib/db.js');
-const db = new Pool(dbParams);
+//const db = new Pool(dbParams);
+const db = new Pool({
+  connectionString: 'postgres://kwelbgvlzpnzkf:7008203550db7c8b7b1faec02be2bd6a8effcc0cdeb48d4481f6dc3df31a15d7@ec2-67-202-63-147.compute-1.amazonaws.com:5432/d743188jbfe6m',
+  ssl: {rejectUnauthorized: false}
+});
 db.connect()
   .then(() => console.log('Connection to db successful'))
   .catch(err => console.log(err));

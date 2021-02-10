@@ -19,7 +19,6 @@ const path = require('path');
 if (app.get('env') === 'development'){ require('dotenv').config()};
 
 
-
 // PG database client/connection setup
 const { Pool } = require('pg');
 const dbParams = require('./lib/db.js');

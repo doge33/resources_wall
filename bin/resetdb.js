@@ -7,7 +7,7 @@ const fs = require('fs');
 const chalk = require('chalk');
 const Client = require('pg-native');
 const app = express();
-if (app.get('env') == 'development'){ require('dotenv').config();
+if (app.get('env') == 'development'){ require('dotenv').config()};
 
 // PG connection setup
 const connectionString = process.env.DATABASE_URL ||

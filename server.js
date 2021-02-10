@@ -14,7 +14,7 @@ const cookieSession = require("cookie-session")
 const connectFlash = require("connect-flash");
 const session = require("express-session");
 const path = require('path');
-if (app.get('env') == 'development'){ require('dotenv').config();
+if (app.get('env') == 'development'){ require('dotenv').config()};
 
 
 

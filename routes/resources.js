@@ -91,6 +91,7 @@ module.exports = ({ getAllResources, addResource, myResources, getResourceByID, 
           resourceList: resources,
           user: req.session.user_id
         };
+        console.log(process.env.DATABASE_URL)
         res.render("main_page", templateVars)
       })
       .catch(e => res.send(e));

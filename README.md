@@ -2,13 +2,13 @@
 
 Resource Wall is a multi-page app that allows learners to save learning resources like tutorials, blogs and videos in a central place that is publicly available to any user. Users can view resources that have been contributed by other users and can review these resources accordingly.
 
+The live version of this web app is currently being maintained at https://tranquil-depths-66658.herokuapp.com/
+
 ## Final Product
 
 !["Screenshot of form submission"](https://github.com/dreamb0yDani/resources_wall/blob/master/documentation/images/form_submission.png?raw=true)
 !["Screenshot of home page"](https://github.com/dreamb0yDani/resources_wall/blob/master/documentation/images/home_page.png?raw=true)
 !["Screenshot of reviews page"](https://github.com/dreamb0yDani/resources_wall/blob/master/documentation/images/reviews.png?raw=true)
-
-The live version of this web app is currently being maintained at https://tranquil-depths-66658.herokuapp.com/
 
 ## Dependencies
 
